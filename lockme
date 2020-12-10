@@ -33,7 +33,11 @@ pkill -u "$USER" -USR1 dunst
 
 # Lock the screen
 
-i3lock -efn -i /tmp/i3lock-final.png
+i3lock -ef -i /tmp/i3lock-final.png
+
+# Wait for 5 seconds and then force the display off.
+
+sleep 5 && pgrep i3lock && xset dpms force off
 
 # Remove the temporary files
 
